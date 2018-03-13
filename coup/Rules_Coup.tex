@@ -1,0 +1,122 @@
+\documentclass[11.5pt]{article}
+
+%\usepackage{geometry}
+\usepackage[inner=1in,outer=1in,top=2.5cm,bottom=2.5cm]{geometry}
+\pagestyle{empty}
+\usepackage{lmodern}
+\usepackage{graphicx}
+\usepackage{fancyhdr, lastpage, bbding, pmboxdraw}
+\usepackage[usenames,dvipsnames]{color}
+\definecolor{darkblue}{rgb}{0,0,.6}
+\usepackage[colorlinks,pagebackref,pdfusetitle,urlcolor=darkblue,citecolor=darkblue,linkcolor=darkred,bookmarksnumbered,plainpages=false]{hyperref}
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+
+\pagestyle{fancyplain}
+\fancyhf{}
+\lhead{ \fancyplain{}{Course Name} }
+%\chead{ \fancyplain{}{} }
+\rhead{ \fancyplain{}{\today} }
+
+\thispagestyle{plain}
+
+%%%%%%%%%%%% LISTING %%%
+\usepackage{listings}
+\usepackage{caption}
+\DeclareCaptionFont{white}{\color{white}}
+\DeclareCaptionFormat{listing}{\colorbox{gray}{\parbox{\textwidth}{#1#2#3}}}
+\captionsetup[lstlisting]{format=listing,labelfont=white,textfont=white}
+\usepackage{verbatim} % used to display code
+\usepackage{fancyvrb}
+\usepackage{acronym}
+\usepackage{amsthm}
+\VerbatimFootnotes % Required, otherwise verbatim does not work in footnotes!
+\usepackage[utf8]{inputenc}
+\usepackage{enumitem}
+
+
+
+
+\definecolor{OliveGreen}{cmyk}{0.64,0,0.95,0.40}
+\definecolor{CadetBlue}{cmyk}{0.62,0.57,0.23,0}
+\definecolor{lightlightgray}{gray}{0.93}
+
+
+
+\lstset{
+%language=bash,                          % Code langugage
+basicstyle=\ttfamily,                   % Code font, Examples: \footnotesize, \ttfamily
+keywordstyle=\color{OliveGreen},        % Keywords font ('*' = uppercase)
+commentstyle=\color{gray},              % Comments font
+numbers=left,                           % Line nums position
+numberstyle=\tiny,                      % Line-numbers fonts
+stepnumber=1,                           % Step between two line-numbers
+numbersep=5pt,                          % How far are line-numbers from code
+backgroundcolor=\color{lightlightgray}, % Choose background color
+frame=none,                             % A frame around the code
+tabsize=2,                              % Default tab size
+captionpos=t,                           % Caption-position = bottom
+breaklines=true,                        % Automatic line breaking?
+breakatwhitespace=false,                % Automatic breaks only at whitespace?
+showspaces=false,                       % Dont make spaces visible
+showtabs=false,                         % Dont make tabls visible
+columns=flexible,                       % Column format
+morekeywords={__global__, __device__},  % CUDA specific keywords
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+\begin{center}
+{\Large \textsc{Coup Rulebook}}
+\end{center}
+\begin{center}
+By Taejin Hwang
+\end{center}
+%\date{September 26, 2014}
+\renewcommand{\arraystretch}{2}
+
+\vskip .1in
+\noindent\textbf{Number of Players:} 3-6 
+\vskip 0.1 in
+\noindent\textbf{Objective:} Be the last player standing with influence cards left.
+\vskip 0.1in
+\noindent\textbf{Materials:} Deck of influence cards, bank of coins.
+\vskip 0.1in
+\noindent\textbf{Setup:} Shuffle the cards and deal two to each player. Players should look at their cards but keep them
+hidden from everyone else. Each player takes two coins from the bank as their starting wealth.
+\vskip 0.1in
+\noindent\textbf{Cards:} There are five different characters in the influence deck (three copies of each character). Each
+of the five characters has one or more special abilities. 
+\begin{enumerate}
+\setlength{\itemsep}{3pt}
+\item The Duke takes taxes and Blocks Foreign Aid.
+\item The Assassin forces one player to give up an Influence card at the cost of 3 coins.
+\item The Captain steals two coins from another player and blocks stealing attempts. 
+\item The Ambassador lets you swap or appear to swap your Influence cards with two new ones from the deck and blocks stealing attempts.
+\item The Contessa blocks assassination attempts.
+\end{enumerate}
+\noindent \textbf{Play:} Starting with the player to the left of the dealer and going clockwise, players take turns
+performing one of the available actions. 
+\begin{enumerate}
+\setlength{\itemsep}{3pt}
+\item Income: Take one coin from the bank. This cannot be challenged nor blocked.
+\item Foreign Aid: Take two coins from the bank. This cannot be challenged but it can be blocked by
+the Duke.
+\item Coup: Costs seven coins. Causes a player to give up an Influence card. Cannot be challenged nor
+blocked. If you start your turn with 10+ coins, you must take this action.
+\item Taxes (the Duke): Take three coins from the bank. Can be challenged.
+\item Assassinate (the Assassin): Costs three coins. Force one player to give up an Influence card of
+their choice. Can be challenged. Can be blocked by the Contessa.
+\item Steal (the Captain): Take two coins from another player. Can be challenged. Can be blocked by
+another Captain or an Ambassador.
+\item Exchange (the Ambassador): Draw two Influence cards from the deck, look at them and mix them with your current Influence card(s). Place two cards back in the deck and shuffle the deck. Can be challenged. cannot be Blocked.
+\end{enumerate}
+\noindent \textbf{Blocking:} If a player takes an action that can be blocked, other players may block it by claiming to have the proper character. The acting player cannot perform the the action and any other action this turn. However, if the acting player chooses to challenge the blocking player and wins the challenge, the action goes through.
+\vskip 0.12cm
+\noindent \textbf{Challenge:}  When the acting player declares their action, any other player may challenge their right to
+take the action. The acting player now must prove they have the power to take the action or forfeit the challenge. If they have the corresponding character, they reveal it and place the revealed card back into the deck. They then shuffle the deck and draw a new card. The challenging player has lost the challenge. If they do NOT have the proper character, they lose the challenge.
+\vskip 0.12cm
+\noindent \textbf{Losing a Challenge:} Any player who loses a challenge must turn one of their Influence cards face up
+for all to see. If that is their last Influence card, they are out of the game. 
+\vskip 0.12cm
+\noindent \textbf{Losing Influence:} Any time a player loses an Influence card, THEY choose which of their cards to reveal. These cards are not returned to the deck. 
+\end{document}
