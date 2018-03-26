@@ -1,0 +1,116 @@
+\documentclass[12 pt]{article}
+%\usepackage{geometry}
+\usepackage[inner=1in,outer=1in,top=2.5cm,bottom=2.5cm]{geometry}
+\pagestyle{empty}
+\usepackage{lmodern}
+\usepackage{graphicx}
+\usepackage{fancyhdr, lastpage, bbding, pmboxdraw}
+\usepackage[usenames,dvipsnames]{color}
+\definecolor{darkblue}{rgb}{0,0,.6}
+\usepackage{enumerate}
+\usepackage[colorlinks,pagebackref,pdfusetitle,urlcolor=darkblue,citecolor=darkblue,linkcolor=darkred,bookmarksnumbered,plainpages=false]{hyperref}
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+
+\pagestyle{fancyplain}
+\fancyhf{}
+\lhead{ \fancyplain{}{Course Name} }
+%\chead{ \fancyplain{}{} }
+\rhead{ \fancyplain{}{\today} }
+
+\thispagestyle{plain}
+
+%%%%%%%%%%%% LISTING %%%
+\usepackage{listings}
+\usepackage{caption}
+\DeclareCaptionFont{white}{\color{white}}
+\DeclareCaptionFormat{listing}{\colorbox{gray}{\parbox{\textwidth}{#1#2#3}}}
+\captionsetup[lstlisting]{format=listing,labelfont=white,textfont=white}
+\usepackage{verbatim} % used to display code
+\usepackage{fancyvrb}
+\usepackage{acronym}
+\usepackage{amsthm}
+\VerbatimFootnotes % Required, otherwise verbatim does not work in footnotes!
+\usepackage[utf8]{inputenc}
+\usepackage{helvet}
+
+
+
+
+\definecolor{OliveGreen}{cmyk}{0.64,0,0.95,0.40}
+\definecolor{CadetBlue}{cmyk}{0.62,0.57,0.23,0}
+\definecolor{lightlightgray}{gray}{0.93}
+
+
+
+\lstset{
+%language=bash,                          % Code langugage
+basicstyle=\ttfamily,                   % Code font, Examples: \footnotesize, \ttfamily
+keywordstyle=\color{OliveGreen},        % Keywords font ('*' = uppercase)
+commentstyle=\color{gray},              % Comments font
+numbers=left,                           % Line nums position
+numberstyle=\tiny,                      % Line-numbers fonts
+stepnumber=1,                           % Step between two line-numbers
+numbersep=5pt,                          % How far are line-numbers from code
+backgroundcolor=\color{lightlightgray}, % Choose background color
+frame=none,                             % A frame around the code
+tabsize=2,                              % Default tab size
+captionpos=t,                           % Caption-position = bottom
+breaklines=true,                        % Automatic line breaking?
+breakatwhitespace=false,                % Automatic breaks only at whitespace?
+showspaces=false,                       % Dont make spaces visible
+showtabs=false,                         % Dont make tabls visible
+columns=flexible,                       % Column format
+morekeywords={__global__, __device__},  % CUDA specific keywords
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+\begin{center}
+{\Large \textsc{Final Project Guidelines}}
+\end{center}
+%\date{September 26, 2014}
+\renewcommand{\arraystretch}{2}
+\noindent\textbf{Final Essay (15\%)}
+\begin{enumerate}[(i)]
+\item Choose/Analyze a strategy for one of the games we have played
+\begin{itemize}
+\item Egyptian Rat Slap, Kremps,Texas HoldEm, Hearts, Coup, Settlers of Catan, or Avalon
+\item The strategy does not necessarily need to be something you play tested during this semester. Just some successful strategy you observed, whether implemented by you or someone else.
+\end{itemize}
+\item Explore the strategy in your essay (perhaps answer these questions, or others)
+\begin{itemize}
+\item What game is your strategy for (pretty important?, so please make obvious)?
+\item How do you implement it?
+\item Why does it work?
+\item What are some countermoves that another player can use to defend against your strategy?
+\end{itemize}
+\item Formatting \begin{itemize}
+\item 1 page max, double spaced, 12-point Times New Roman, 1 inch margins
+\item Name, Student ID, Title at top
+\end{itemize}
+\end{enumerate}
+Example essays posted at @ https://artofthegame.github.io/FinalProject.html
+\vskip 0.2 in
+\noindent\textbf{Final Presentation (10\%)} 
+\begin{enumerate}[(i)]
+\item Choose/Analyze a strategy for one of the games we have played
+\item Prepare a 4-5 minute presentation about the game discussing the following points:
+\begin{enumerate}[(1)]
+\item Rules
+	\begin{itemize}
+	\item You do not need to explain every single edge case rule, just the general idea of the game, enough to understand the main idea for the rest of presentation
+	\end{itemize}
+\item How it applies to this class (perhaps answer one of these, or others)
+	\begin{itemize}
+	\item Strategies?
+	\item Number of players?
+	\item Length of game?
+	\end{itemize}
+\item Note: Even if the game is not perfect in every aspect (e.g. longer than the 2 hour class time), still present on it if you find it interesting enough
+\item Prepare for a few questions after
+\item Any presentations exceeding 5 minutes will be ended
+\item Sample presentation will be done in class on April 4, 2018
+\end{enumerate}
+\end{enumerate}
+\end{document}
+
