@@ -202,8 +202,10 @@
 		margin-bottom: 1.6em;
 	}
 	
-		header h2
+		header h3
 		{
+			font-size: 2em;
+			margin-bottom: 10px;
 		}
 
 		header .byline
