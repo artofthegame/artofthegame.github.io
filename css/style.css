@@ -57,13 +57,18 @@
 
 	a
 	{
-		text-decoration: none;
+		
 		color: #80BA8E;
 	}
 	
 	a:hover
 	{
 		text-decoration: underline;
+	}
+
+	td a {
+		text-decoration: none;
+		color: #777;
 	}
 
 	sub
@@ -103,7 +108,7 @@
 
 	#announcementHeader {
 		margin: 0.2em 0.2em;
-		padding: 0.2em 0.2em;
+		padding: 0.4em 0.2em;
 		font-size: 2.3em;
 		font-family: 'Raleway', sans-serif;
 	}
