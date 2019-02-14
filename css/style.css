@@ -162,9 +162,12 @@
 		padding: 5px 10px 5px 10px;
 	}
 
-	.dropdown-backdrop {
-    position: static;
-	}
+	@media (max-width: 480px) {
+        .landing-page-header ul{  
+           position: static;
+           width:100%;
+        }
+    }
 
 	$bgcolors:#7cd4d4, #e2df45, #e8afbb, #8bc3e5;
 	$keycolor:#03384b;
