@@ -1,0 +1,141 @@
+\documentclass[11.5pt]{article}
+
+%\usepackage{geometry}
+\usepackage[inner=0.9in,outer=0.9in,top=2.5cm,bottom=2.5cm]{geometry}
+\pagestyle{empty}
+\usepackage{lmodern}
+\usepackage{graphicx}
+\usepackage{fancyhdr, lastpage, bbding, pmboxdraw}
+\usepackage[usenames,dvipsnames]{color}
+\definecolor{darkblue}{rgb}{0,0,.6}
+\usepackage[colorlinks,pagebackref,pdfusetitle,urlcolor=darkblue,citecolor=darkblue,linkcolor=darkred,bookmarksnumbered,plainpages=false]{hyperref}
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+
+\pagestyle{fancyplain}
+\fancyhf{}
+\lhead{ \fancyplain{}{The Art of the Game} }
+%\chead{ \fancyplain{}{} }
+\rhead{ \fancyplain{}{\today} }
+
+\thispagestyle{plain}
+
+%%%%%%%%%%%% LISTING %%%
+\usepackage{listings}
+\usepackage{caption}
+\DeclareCaptionFont{white}{\color{white}}
+\DeclareCaptionFormat{listing}{\colorbox{gray}{\parbox{\textwidth}{#1#2#3}}}
+\captionsetup[lstlisting]{format=listing,labelfont=white,textfont=white}
+\usepackage{verbatim} % used to display code
+\usepackage{fancyvrb}
+\usepackage{acronym}
+\usepackage{amsthm}
+\VerbatimFootnotes % Required, otherwise verbatim does not work in footnotes!
+\usepackage[utf8]{inputenc}
+\usepackage{enumitem}
+
+
+
+
+\definecolor{OliveGreen}{cmyk}{0.64,0,0.95,0.40}
+\definecolor{CadetBlue}{cmyk}{0.62,0.57,0.23,0}
+\definecolor{lightlightgray}{gray}{0.93}
+
+
+
+\lstset{
+%language=bash,                          % Code langugage
+basicstyle=\ttfamily,                   % Code font, Examples: \footnotesize, \ttfamily
+keywordstyle=\color{OliveGreen},        % Keywords font ('*' = uppercase)
+commentstyle=\color{gray},              % Comments font
+numbers=left,                           % Line nums position
+numberstyle=\tiny,                      % Line-numbers fonts
+stepnumber=1,                           % Step between two line-numbers
+numbersep=5pt,                          % How far are line-numbers from code
+backgroundcolor=\color{lightlightgray}, % Choose background color
+frame=none,                             % A frame around the code
+tabsize=2,                              % Default tab size
+captionpos=t,                           % Caption-position = bottom
+breaklines=true,                        % Automatic line breaking?
+breakatwhitespace=false,                % Automatic breaks only at whitespace?
+showspaces=false,                       % Dont make spaces visible
+showtabs=false,                         % Dont make tabls visible
+columns=flexible,                       % Column format
+morekeywords={__global__, __device__},  % CUDA specific keywords
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+\begin{center}
+{\Large \textsc{The Art of the Game}}
+\end{center}
+\begin{center}
+Quiz 1 Solutions
+\end{center}
+%\date{September 26, 2014}
+\renewcommand{\arraystretch}{2}
+
+\vskip .1in
+\noindent 1: Are you allowed to play a development card the turn you buy it?
+\vskip 0.1 in
+\indent \textbf{Answer: Yes, but only if the development card is a Victory Point and it brings me to 10 points.} 
+
+\vskip 0.16in
+
+\vskip .1in
+\noindent 2: Are you allowed to play a development card before you roll the die??
+\vskip 0.1 in
+\indent \textbf{No}
+
+\vskip 0.16in
+
+\vskip .1in
+\noindent 3: What does rolling a 7 allow you to do (mark all that apply)?
+\vskip 0.1 in
+\indent \textbf{There is no space on the board with a 7 on it. When a 7 is rolled, everyone who has strictly more than 7 (8 or more) cards must discard half of their cards rounding down. In addition to this, the player that rolled a 7, must move the robber to a new location and he or she is also allowed to steal a resource from any player who owns a settlement adjacent to the tile the robber was moved to. }
+
+\vskip 0.16in
+
+\vskip .1in
+\noindent 4: What do you need to build a settlement (mark all that apply)?
+\vskip 0.1 in
+\indent \textbf{Wood, Brick, Wheat, Sheep}
+
+\vskip 0.16in
+
+\vskip .1in
+\noindent 5: For the following image, where is an acceptable location for the red player to build a settlement?
+\vskip 0.1 in
+\indent \textbf{The rules of Catan say that a player is not allowed to build a settlement on a spot adjacent to another settlement.}
+
+\vskip 0.16in
+
+\vskip .1in
+\noindent 6: Which player would collect this trick (hand)? (Player A: 8 Spades, Player B: 10 Spades, Player C: Jack Spades, and Player D: 9 Spades)
+\vskip 0.1 in
+\indent \textbf{Player A starts with a spades so whoever played the highest Spade in this trick takes the hand. In this case, it would be player C.}
+
+\vskip 0.16in
+
+\noindent 7: Which player would collect this trick (hand)? (Player A: 6 Diamonds, Player B: King Hearts, Player C: 10 Diamonds, and Player D: Queen Spades)
+\vskip 0.1 in
+\indent \textbf{Player A starts with Diamonds so whoever played the highest Diamond in this trick takes the hand. In this case, it would be player C again.}
+
+\vskip 0.16in
+
+\noindent 8: Is it a good idea to pass all of your spades? (assuming you don't have all high-card spades)
+\vskip 0.1 in
+\indent \textbf{Often times, beginners will try this to get rid of a suit so that whenever a suit is played, they can play whatever they want on top of it. However, with Spades, in the passing phase, if you get passed a Queen, King, or Ace, you are now in huge trouble.}
+
+\vskip 0.16in
+
+\noindent 9: Cooperation is allowed in Hearts. Can you show other people what cards you have?
+\vskip 0.1 in
+\indent \textbf{You are allowed to tell others what cards you have, but you can not directly SHOW them what card you have. (You can lie about what cards you have.)}
+
+\vskip 0.16in
+
+\noindent 10: Which player would collect this trick (hand)? (Player A: 2 Clubs, Player B: Ace Clubs, Player C: Jack Clubs, and Player D: 4 Hearts)
+\vskip 0.1 in
+\indent \textbf{This was a tricky question. Since the 2 of Clubs is played, it is the first turn. However, we see that Player D has broken hearts. Therefore this hand is illegal.}
+
+\end{document}
