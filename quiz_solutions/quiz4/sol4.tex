@@ -1,0 +1,138 @@
+\documentclass[11.5pt]{article}
+
+%\usepackage{geometry}
+\usepackage[inner=0.9in,outer=0.9in,top=2.5cm,bottom=2.5cm]{geometry}
+\pagestyle{empty}
+\usepackage{lmodern}
+\usepackage{graphicx}
+\usepackage{fancyhdr, lastpage, bbding, pmboxdraw}
+\usepackage[usenames,dvipsnames]{color}
+\definecolor{darkblue}{rgb}{0,0,.6}
+\usepackage[colorlinks,pagebackref,pdfusetitle,urlcolor=darkblue,citecolor=darkblue,linkcolor=darkred,bookmarksnumbered,plainpages=false]{hyperref}
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+
+\pagestyle{fancyplain}
+\fancyhf{}
+\lhead{ \fancyplain{}{The Art of the Game} }
+%\chead{ \fancyplain{}{} }
+\rhead{ \fancyplain{}{\today} }
+
+\thispagestyle{plain}
+
+%%%%%%%%%%%% LISTING %%%
+\usepackage{listings}
+\usepackage{caption}
+\DeclareCaptionFont{white}{\color{white}}
+\DeclareCaptionFormat{listing}{\colorbox{gray}{\parbox{\textwidth}{#1#2#3}}}
+\captionsetup[lstlisting]{format=listing,labelfont=white,textfont=white}
+\usepackage{verbatim} % used to display code
+\usepackage{fancyvrb}
+\usepackage{acronym}
+\usepackage{amsthm}
+\VerbatimFootnotes % Required, otherwise verbatim does not work in footnotes!
+\usepackage[utf8]{inputenc}
+\usepackage{enumitem}
+
+
+
+
+\definecolor{OliveGreen}{cmyk}{0.64,0,0.95,0.40}
+\definecolor{CadetBlue}{cmyk}{0.62,0.57,0.23,0}
+\definecolor{lightlightgray}{gray}{0.93}
+
+
+
+\lstset{
+%language=bash,                          % Code langugage
+basicstyle=\ttfamily,                   % Code font, Examples: \footnotesize, \ttfamily
+keywordstyle=\color{OliveGreen},        % Keywords font ('*' = uppercase)
+commentstyle=\color{gray},              % Comments font
+numbers=left,                           % Line nums position
+numberstyle=\tiny,                      % Line-numbers fonts
+stepnumber=1,                           % Step between two line-numbers
+numbersep=5pt,                          % How far are line-numbers from code
+backgroundcolor=\color{lightlightgray}, % Choose background color
+frame=none,                             % A frame around the code
+tabsize=2,                              % Default tab size
+captionpos=t,                           % Caption-position = bottom
+breaklines=true,                        % Automatic line breaking?
+breakatwhitespace=false,                % Automatic breaks only at whitespace?
+showspaces=false,                       % Dont make spaces visible
+showtabs=false,                         % Dont make tabls visible
+columns=flexible,                       % Column format
+morekeywords={__global__, __device__},  % CUDA specific keywords
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+\begin{center}
+{\Large \textsc{The Art of the Game}}
+\end{center}
+\begin{center}
+Quiz 4 Solutions
+\end{center}
+%\date{September 26, 2014}
+\renewcommand{\arraystretch}{2}
+
+\vskip .1in
+\noindent 1: Can you bluff and pretend to be any character?
+\vskip 0.1 in
+\indent \textbf{Yes, you are allowed to play any character action but someone may call you out if they think you are bluffing.} 
+
+\vskip 0.16in
+
+\vskip .1in
+\noindent 2: On a given turn, only certain players are allowed to \underline{\hspace{1cm}}, whereas all players can \underline{\hspace{1cm}}.
+\vskip 0.1 in
+\indent \textbf{block, challenge}
+
+\vskip 0.16in
+
+\vskip .1in
+\noindent 3: Which character(s) can block stealing (assuming they were the target of stealing)?
+\vskip 0.1 in
+\indent \textbf{Ambassador, Captain}
+
+\vskip 0.16in
+
+\vskip .1in
+\noindent 4: If someone else assassinates you and is successful, do they pick which card to assassinate, or do you pick the card that is assassinated?
+\vskip 0.1 in
+\indent \textbf{The victim picks the card.}
+
+\vskip 0.16in
+
+\vskip .1in
+\noindent 5: Alice steals 2 coins from Bob. If Charles has the captain, is he allowed to block this steal?
+\vskip 0.1 in
+\indent \textbf{No, Charles can challenge Alice's steal but only Bob can block the steal.}
+
+\vskip 0.16in
+
+\vskip .1in
+\noindent 6: Alice chooses to assassinate Bob and Bob does not choose to block her assassination. Bob does however challenge Alice's assassination. If Alice has the assassin, how many influence does Bob lose?
+\vskip 0.1 in
+\indent \textbf{Alice attempts to assassinate Bob so Bob would lose one influence. Bob challenges Alice but loses the challenge so he loses another influence. The assassination would go through and Bob would lose a total of 2 influence.}
+
+\vskip 0.16in
+
+\noindent 7: Alice has 10 coins. On her turn, is she allowed to assassinate (note, this word was chosen very very very carefully) Bob?
+\vskip 0.1 in
+\indent \textbf{No, Alice has 10 coins so she must coup.}
+
+\vskip 0.16in
+
+\noindent 8: Alice has 10 coins. Alice claims to have assassin and, after paying 3 coins, targets Bob. Neither Bob nor Charlie challenge the whether Alice is assassin. Bob claims to be Contessa (to block the assassination). Who is(are) allowed to challenge Bob's claim?
+\vskip 0.1 in
+\indent \textbf{Alice and Charlie can both challenge Bob's claim.}
+
+\vskip 0.16in
+
+\newpage
+
+\noindent Extra Credit: There are only two players left in the game, Alice and Bob. Both have only one influence left and no coins. It is now Alice's turn and she takes the exchange (Ambassador) action and is unchallenged. She sees a Duke and a Captain and is currently holding an Ambassador. If she sees two Dukes, and two Captains already dead on the field, which card should she keep, why? and what should her strategy be?
+\vskip 0.1 in
+\indent \textbf{The Duke and Captain that Alice sees when exchanging are the only Duke and Captain left on the board. She knows Bob cannot have a Duke or a Captain but he could have an Ambassador, Assassin, or Contessa. Now we consider all three cases. If Bob has the Assassin, Alice should take the Captain since Bob can at best Foreign Aid and Alice would be able to steal all of Bob's coins. Had Alice took the duke, Bob would've reached 3 coins faster than Alice could reach 10 to coup. Now if Bob has the Ambassador, and Alice takes the Duke, Bob could exchange and get the Captain rendering Alice's duke useless. Therefore Alice should take the Captain in this scenario as well. If Bob has the Contessa, it might be more favorable to have the duke but he could always bluff, play exchange and end up with the Captain. In general, Captain is the safest card to have in a one on one scenario, so Alice should take the Captain.}
+
+
+\end{document}
