@@ -1,0 +1,163 @@
+\documentclass[11.5pt]{article}
+
+%\usepackage{geometry}
+\usepackage[inner=0.9in,outer=0.9in,top=2.5cm,bottom=2.5cm]{geometry}
+\pagestyle{empty}
+\usepackage{lmodern}
+\usepackage{graphicx}
+\usepackage{fancyhdr, lastpage, bbding, pmboxdraw}
+\usepackage[usenames,dvipsnames]{color}
+\definecolor{darkblue}{rgb}{0,0,.6}
+\usepackage[colorlinks,pagebackref,pdfusetitle,urlcolor=darkblue,citecolor=darkblue,linkcolor=darkred,bookmarksnumbered,plainpages=false]{hyperref}
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+
+\pagestyle{fancyplain}
+\fancyhf{}
+\lhead{ \fancyplain{}{The Art of the Game} }
+%\chead{ \fancyplain{}{} }
+\rhead{ \fancyplain{}{\today} }
+
+\thispagestyle{plain}
+
+%%%%%%%%%%%% LISTING %%%
+\usepackage{listings}
+\usepackage{caption}
+\DeclareCaptionFont{white}{\color{white}}
+\DeclareCaptionFormat{listing}{\colorbox{gray}{\parbox{\textwidth}{#1#2#3}}}
+\captionsetup[lstlisting]{format=listing,labelfont=white,textfont=white}
+\usepackage{verbatim} % used to display code
+\usepackage{fancyvrb}
+\usepackage{acronym}
+\usepackage{amsthm}
+\VerbatimFootnotes % Required, otherwise verbatim does not work in footnotes!
+\usepackage[utf8]{inputenc}
+\usepackage{enumerate}
+
+
+
+
+\definecolor{OliveGreen}{cmyk}{0.64,0,0.95,0.40}
+\definecolor{CadetBlue}{cmyk}{0.62,0.57,0.23,0}
+\definecolor{lightlightgray}{gray}{0.93}
+
+
+
+\lstset{
+%language=bash,                          % Code langugage
+basicstyle=\ttfamily,                   % Code font, Examples: \footnotesize, \ttfamily
+keywordstyle=\color{OliveGreen},        % Keywords font ('*' = uppercase)
+commentstyle=\color{gray},              % Comments font
+numbers=left,                           % Line nums position
+numberstyle=\tiny,                      % Line-numbers fonts
+stepnumber=1,                           % Step between two line-numbers
+numbersep=5pt,                          % How far are line-numbers from code
+backgroundcolor=\color{lightlightgray}, % Choose background color
+frame=none,                             % A frame around the code
+tabsize=2,                              % Default tab size
+captionpos=t,                           % Caption-position = bottom
+breaklines=true,                        % Automatic line breaking?
+breakatwhitespace=false,                % Automatic breaks only at whitespace?
+showspaces=false,                       % Dont make spaces visible
+showtabs=false,                         % Dont make tabls visible
+columns=flexible,                       % Column format
+morekeywords={__global__, __device__},  % CUDA specific keywords
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+\begin{center}
+{\Large \textsc{The Art of the Game}}
+\end{center}
+\begin{center}
+Avalon Quiz Solutions
+\end{center}
+%\date{September 26, 2014}
+\renewcommand{\arraystretch}{2}
+
+\vskip .1in
+\noindent 1: Matching
+\begin{enumerate}[(i)]
+\item Loyal Servants of Arthur: \\
+\indent \textbf{Are part of the good team. Has no information whatsoever.} 
+
+\item Minions of Mordred: \\
+\indent \textbf{Are part of the evil team.} 
+
+\item Percival: \\
+\indent \textbf{Sees Morgana and Merlin's thumbs but doesn't know who's who.} 
+
+\item Merlin: \\
+\indent \textbf{Knows all of the evil players except Mordred.} 
+
+\item Morgana: \\
+\indent \textbf{Is part of the evil team, raises thumb for Percival and pretends to be Merlin.} 
+
+\item Oberon: \\
+\indent \textbf{Is part of the evil team but cannot see any of the evil players.}
+
+\item Assassin: \\
+\indent \textbf{At the end of game, if the resistance wins, tries to "assassinate" Merlin.}
+
+\item Mordred: \\
+\indent \textbf{Is part of the evil team but is invisible to Merlin.}
+
+\end{enumerate}
+
+
+\vskip 0.16in
+
+\vskip .1in
+\noindent 2: Who raises their thumbs before the game?
+\vskip 0.1 in
+\indent \textbf{Minions of Mordred, Assassin, Morgana, and Oberon raise their thumbs first for Merlin. Then Merlin and Morgana raise their thumbs for Percival. Note that Mordred does not raise his or her thumb for Merlin.}
+
+\vskip 0.16in
+
+\vskip .1in
+\noindent 3: If you are part of the good team should you ever play a fail card?
+\vskip 0.1 in
+\indent \textbf{No, the goal of the resistance is to succeed three missions, so playing a fail card is counterintuitive. In addition to this, the rules of the game say that if you are on the good team, you cannot play a fail card.}
+
+\vskip 0.16in
+
+\vskip .1in
+\noindent 4: If you are on the evil team, is it a good idea to go on a mission with another person that is also on the evil team?
+\vskip 0.1 in
+\indent \textbf{No, it is very risky since both of you may play fail revealing your identity.}
+
+\vskip 0.16in
+
+\vskip .1in
+\noindent 5: If you are part of the evil team should you ever play a success card?
+\vskip 0.1 in
+\indent \textbf{Yes, it is at times necessary to hide my identity, like when there are two spies on the team.}
+
+\vskip 0.16in
+
+\vskip .1in
+\newpage
+\noindent 6: When should you vote to reject a mission?
+\vskip 0.1 in
+\indent \textbf{If you are on the good team, and you suspect that the person picking the team for the mission is bad, this is definitely a bad sign and you should probably reject the mission. If other clues tell you that there is someone bad selected for the mission, it is also probably a good idea to reject it. Also, you may want to reject a mission to slow the game down and hear more people talk so you can get a better feel of the other players. If you are on the evil team, you should probably vote to reject the mission if no other evil players are selected for the mission or to slow the game down pressuring everyone to let the fifth person (who is actually bad) decide the team.}
+
+\vskip 0.16in
+
+\noindent 7: When voting for the mission, if everyone accepts the mission, will it most likely fail or succeed?
+\indent \textbf{It will most likely fail because everyone, including the spies, thought the team was "good." Remember that if everyone approves the mission, the evil team also approved it.}
+
+\vskip 0.16in
+
+\noindent 8: Extra Credit: Alice claims that she is Percival at the beginning of the game and nobody objects by saying he or she is Percival as well. Should you believe that Alice is Percival? What are the pros and cons of this strategy?
+\vskip 0.1 in
+\indent \textbf{There are multiple viewpoints to this strategy. On one hand, if Percival reveals himself and there is no objection to this, it is likely that Alice is indeed Percival and the good team now have one guaranteed member for their team every mission. However, Alice must now be extremely careful to not reveal Merlin's idea especially since she claimed that she was Percival. In addition, Morgana could try claiming Percival ask for Percival to reveal himself which is again extremely dangerous for the good team. This strategy is very situational and works sometimes but also fails miserably at other times. It really depends on what the state of the game is.}
+
+\vskip 0.16in
+
+\newpage
+
+\noindent Extra Credit: There are only two players left in the game, Alice and Bob. Both have only one influence left and no coins. It is now Alice's turn and she takes the exchange (Ambassador) action and is unchallenged. She sees a Duke and a Captain and is currently holding an Ambassador. If she sees two Dukes, and two Captains already dead on the field, which card should she keep, why? and what should her strategy be?
+\vskip 0.1 in
+\indent \textbf{The Duke and Captain that Alice sees when exchanging are the only Duke and Captain left on the board. She knows Bob cannot have a Duke or a Captain but he could have an Ambassador, Assassin, or Contessa. Now we consider all three cases. If Bob has the Assassin, Alice should take the Captain since Bob can at best Foreign Aid and Alice would be able to steal all of Bob's coins. Had Alice took the duke, Bob would've reached 3 coins faster than Alice could reach 10 to coup. Now if Bob has the Ambassador, and Alice takes the Duke, Bob could exchange and get the Captain rendering Alice's duke useless. Therefore Alice should take the Captain in this scenario as well. If Bob has the Contessa, it might be more favorable to have the duke but he could always bluff, play exchange and end up with the Captain. In general, Captain is the safest card to have in a one on one scenario, so Alice should take the Captain.}
+
+
+\end{document}
