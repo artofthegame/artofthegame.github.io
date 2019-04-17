@@ -118,11 +118,21 @@
 		font-size: 1.5em;
 	}
 
+	.leaderboardHeader {
+		margin: 0.2em 0;
+	}
+
 	#hrSplit {
 		border: 0;
 		border-top: solid 1px #ddd;
 		margin: 3em 0 0 0;
 		padding: 3em 0 0 0;
+	}
+
+	#leaderboard {
+		width: 600px;
+		margin: 0em 0.2em 1.0em 0.2em;
+		padding: 0.6em 0.2em;
 	}
 
 	#description {
@@ -131,8 +141,56 @@
 	}
 
 	.miscellaneous {
-		margin: 0.2em 0.2em;
+		margin: 0em 0.2em 1.0em 0.2em;
 		padding: 0.6em 0.2em;
+	}
+
+	.leaderboardRow {
+		position: relative;
+		display: block;
+		width: 80%;
+		height: 40px;
+		border-bottom: 1px;
+	}
+
+	.leaderboardRow:nth-child(1) {background: rgba(255,255,255,1); border: 0.1px; border-style: solid; border-color: rgba(0,0,0,0.1);}
+	/* Gold */
+	.leaderboardRow:nth-child(2) {background: rgba(252,234,187,1);}
+	/* Silver */
+	.leaderboardRow:nth-child(3) {background: rgba(237,237,237,1);}
+	/* Bronze */
+	.leaderboardRow:nth-child(4) {background: rgba(243,226,199,1);}
+	/* Blue */
+	.leaderboardRow:nth-child(5) {background: rgba(212,228,239,1);}
+	/* Purple */
+	.leaderboardRow:nth-child(6) {background: rgba(203,96,179,0.2);}
+
+	.name {
+		position: relative;
+		display: inline-block;
+		width: 40%;
+		line-height: 45px;
+		margin: 0 2em;
+	}
+
+	.score {
+		position: relative;
+		display: inline-block;
+		width: 20%;
+	}
+
+	.rank {
+		position: relative;
+		display: inline-block;
+		width: 10%;
+		margin: 0 2em;
+	}
+
+	#rankHeader {
+		position: relative;
+		display: inline-block;
+		width: 13%;
+		margin: 0 1.5em;
 	}
 
 	#announcements {
