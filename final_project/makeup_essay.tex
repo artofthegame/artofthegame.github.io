@@ -1,0 +1,152 @@
+\documentclass[11.5pt]{article}
+
+%\usepackage{geometry}
+\usepackage[inner=1in,outer=1in,top=2.5cm,bottom=2.5cm]{geometry}
+\pagestyle{empty}
+\usepackage{lmodern}
+\usepackage{graphicx}
+\usepackage{fancyhdr, lastpage, bbding, pmboxdraw}
+\usepackage[usenames,dvipsnames]{color}
+\definecolor{darkblue}{rgb}{0,0,.6}
+\usepackage[colorlinks,pagebackref,pdfusetitle,urlcolor=darkblue,citecolor=darkblue,linkcolor=darkred,bookmarksnumbered,plainpages=false]{hyperref}
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+
+\pagestyle{fancyplain}
+\fancyhf{}
+\lhead{ \fancyplain{}{The Art of the Game} }
+%\chead{ \fancyplain{}{} }
+\rhead{ \fancyplain{}{\today} }
+
+\thispagestyle{plain}
+
+%%%%%%%%%%%% LISTING %%%
+\usepackage{listings}
+\usepackage{caption}
+\DeclareCaptionFont{white}{\color{white}}
+\DeclareCaptionFormat{listing}{\colorbox{gray}{\parbox{\textwidth}{#1#2#3}}}
+\captionsetup[lstlisting]{format=listing,labelfont=white,textfont=white}
+\usepackage{verbatim} % used to display code
+\usepackage{fancyvrb}
+\usepackage{acronym}
+\usepackage{amsthm}
+\VerbatimFootnotes % Required, otherwise verbatim does not work in footnotes!
+\usepackage[utf8]{inputenc}
+\usepackage{enumerate}
+
+
+
+
+\definecolor{OliveGreen}{cmyk}{0.64,0,0.95,0.40}
+\definecolor{CadetBlue}{cmyk}{0.62,0.57,0.23,0}
+\definecolor{lightlightgray}{gray}{0.93}
+
+
+
+\lstset{
+%language=bash,                          % Code langugage
+basicstyle=\ttfamily,                   % Code font, Examples: \footnotesize, \ttfamily
+keywordstyle=\color{OliveGreen},        % Keywords font ('*' = uppercase)
+commentstyle=\color{gray},              % Comments font
+numbers=left,                           % Line nums position
+numberstyle=\tiny,                      % Line-numbers fonts
+stepnumber=1,                           % Step between two line-numbers
+numbersep=5pt,                          % How far are line-numbers from code
+backgroundcolor=\color{lightlightgray}, % Choose background color
+frame=none,                             % A frame around the code
+tabsize=2,                              % Default tab size
+captionpos=t,                           % Caption-position = bottom
+breaklines=true,                        % Automatic line breaking?
+breakatwhitespace=false,                % Automatic breaks only at whitespace?
+showspaces=false,                       % Dont make spaces visible
+showtabs=false,                         % Dont make tabls visible
+columns=flexible,                       % Column format
+morekeywords={__global__, __device__},  % CUDA specific keywords
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+\begin{center}
+{\Large \textsc{The Art of the Game}}
+\end{center}
+\begin{center}
+MAKEUP ESSAY
+\end{center}
+%\date{September 26, 2014}
+\renewcommand{\arraystretch}{2}
+\vskip 0.1in
+\noindent\textbf{Deliverables:} The guidelines and ex
+\vskip .1in
+\noindent\textbf{Grading:} The entire project as a whole will be worth 25\% of your grade in the class. The final essay will be worth 60\% and the remaining 40\% will be a proposal of a new rule for one of the games we have played.
+\vskip 0.3in
+\noindent\textbf{Part 1: Final Essay} 
+\begin{enumerate}
+\setlength{\itemsep}{3pt}
+\item Choose and analyze a strategy for one of the games we've played:
+	\begin{enumerate}[(i)]
+	\item Your options are: Kemps, Hearts, Catan, Coup, Codenames, Avalon, and Secret Hitler
+	\item The strategy does not necessarily need to be something you play tested during this semester. Just some successful strategy you observed, whether implemented by you or someone else.
+	\end{enumerate}
+\item Explore the strategy in your essay (perhaps answer these questions, or others)
+	\begin{enumerate}[(i)]
+	\item What game is your strategy for? (Please make this obvious)
+	\item How is it implemented?
+	\item When does it work and why?
+	\item What are some drawbacks of this strategy? How can it be countered?
+	\end{enumerate}
+\item Formatting
+	\begin{enumerate}[(i)]
+	\item 1 page max, double spaced, 12pt Times New Roman, 1 inch margins
+	\item Please keep your essay to one page, keep your points concise.
+	\item Name, Student ID, Title at the top
+	\item Sample Essay: 
+	\end{enumerate}
+\item Deadline / How to turn in
+	\begin{enumerate}[(i)]
+	\item The final essay will be due on the last day of class May 1st.
+	\item Please email your essay to calaotg@gmail.com.
+	\item Please note that the Essay and Strategy Proposal have DIFFERENT deadlines.
+	\end{enumerate}
+\end{enumerate}
+
+\newpage
+\noindent\textbf{Part 2: New Rule Proposal} 
+\begin{enumerate}
+\setlength{\itemsep}{3pt}
+\item In this part you will come up with a new rule / character / modification to a game we've played.
+	\begin{enumerate}[(i)]
+	\item Your options are the same: Kemps, Hearts, Catan, Coup, Codenames, Avalon, and Secret Hitler
+	\item Your modification is something that should be simple to implement. The majority of the rules should still stay the same.
+	\end{enumerate}
+\item Explore the strategy in your project (perhaps answer these questions, or others)
+	\begin{enumerate}[(i)]
+	\item What game is your strategy for? (Please make this obvious)
+	\item What is your new rule / strategy / modification?
+	\item How is it implemented?
+	\item How does this change gameplay?
+	\item Do you think your change is beneficial to the game? If so, or if not, why?
+	\item Are there strategies currently in the game that will not work given your change?
+	\end{enumerate}
+\item Formatting
+	\begin{enumerate}[(i)]
+	\item For this part, the formatting is up to you. You may make a video, type up a report, or do some form of presentation.
+		\begin{enumerate}[(a)]
+		\item If you do a video, please keep it to a maximum of 5 minutes
+		\item If you write up a report, please keep it to a minimum of 1 page, maximum of 5 pages.
+		\end{enumerate}
+	\item You may include any drawings, pictures, or whatever you feel is relevant to convey your ideas.
+	\item Name, Student ID, Title at the top
+	\item Sample will be on the course website
+	\end{enumerate}
+\item Final Day of Class
+	\begin{enumerate}[(i)]
+	\item For this portion of the project, we will select the top strategies and actually try them out in class.
+	\item This obviously means this portion of the project will actually be due before the final day of class.
+	\end{enumerate}
+\item Deadline / How to turn in
+	\begin{enumerate}[(i)]
+	\item This portion of the final project will be due Monday April 29th at 11:59 p.m.
+	\item Please email your project to calaotg@gmail.com
+	\item If you're unsure about how to submit your project, please ask.
+	\end{enumerate}
+\end{enumerate}
+\end{document}
